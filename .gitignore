@@ -1,0 +1,48 @@
+# Temporary files (24-hour TTL)
+tmp/*
+!tmp/.gitkeep
+
+# Personal context and queries (contents gitignored)
+personal/*
+!personal/README.md
+!personal/.gitkeep
+
+# Research briefs (contents gitignored)
+research_briefs/*
+!research_briefs/.gitkeep
+
+# Scratch working files (contents gitignored)
+scratch/*
+!scratch/.gitkeep
+
+# Drafts (contents gitignored)
+drafts/*
+!drafts/.gitkeep
+
+# Output files (contents gitignored)
+output/*
+!output/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
