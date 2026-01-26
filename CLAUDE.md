@@ -44,9 +44,11 @@ Rules added through reflection on recurring mistakes.
 
 - **Agent prompts define principles, not procedures.** AI agents already know common libraries and coding patterns. Focus on: domain principles (Few/Knaflic), hard constraints (file paths), preferences (ggplot style), and anti-patterns (no pie charts). Avoid detailed code templates - the agent can implement principles without step-by-step instructions. Over-prescription wastes context and reduces adaptability.
 
+- **Training data confidence causes hallucination.** When documenting external systems (APIs, third-party tools), ALWAYS fetch current docs or test actual behavior. Never write guides from memory alone—training data may be outdated or wrong.
+
 ## Notion Formatting
 
-Before writing to Notion, read `docs/notion-formatting-guide.md`. Key gotcha: tables require XML syntax, not Markdown pipes.
+Before writing to Notion, read `docs/notion-formatting-guide.md`. Key gotcha: tables require the API's block format, not Markdown pipes.
 
 ## Available Workflows
 Always check skills for use cases.
