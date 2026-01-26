@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-ProductAgents is an AI-powered workflow automation toolkit. It connects analytics data with documentation systems to automate research, writing, and reporting tasks.
+ProductAIFlows is an AI-powered workflow automation toolkit. It connects analytics data with documentation systems to automate research, writing, and reporting tasks.
 
 ## Meta: How to Evolve Prompts
 
@@ -56,7 +56,6 @@ Always check skills for use cases.
 | Skill | Purpose | Invoked By |
 |-------|---------|------------|
 | `analyze` | Rigorous data investigation | User asks data questions |
-| `uxr-synthesize` | Interview transcript synthesis | User has transcripts to analyze |
 | `test-thinking` | A/B test variation design | User designing test variations |
 
 ## Personal Query Library
@@ -88,7 +87,7 @@ When a query works well and seems reusable, offer to save it:
 4. Add YAML frontmatter with name, description, and param defaults
 
 
-### Key Patterns
+## Working Conventions
 
 **tmp/ has 24-hour TTL.** Use tmp/ for intra-conversation context (e.g., advisors writing files for query agents to read). Files survive overnight for next-morning work, but treat as ephemeral - don't rely on them persisting long-term.
 
@@ -100,11 +99,11 @@ When a query works well and seems reusable, offer to save it:
 3. Reuse queries, data, or analysis structure when applicable
 
 **File naming conventions:**
-- Include topic and date: `feature_timeline_2025-01-11.py`
+- Include topic and date: `feature_timeline_2026-01-26.py`
 - Use underscores, lowercase
 - Version when iterating: `timeline_v2.py`, `timeline_v3.py`
 
-### Subdirectory Standards
+**Subdirectory standards:**
 
 | Path | Contents |
 |------|----------|
@@ -113,10 +112,6 @@ When a query works well and seems reusable, offer to save it:
 | `personal/queries/` | Saved reusable SQL queries |
 
 All folders are tracked in git but contents are gitignored (except personal/README.md and templates).
-
-### Key Files
-- @docs/notion-formatting-guide.md — Full Notion syntax reference
-
 
 ## Agent Orchestration Principles
 
