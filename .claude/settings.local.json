@@ -1,0 +1,11 @@
+{
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "notion"
+  ],
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:mcp.notion.com)"
+    ]
+  }
+}
