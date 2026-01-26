@@ -1,11 +1,13 @@
 {
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:mcp.notion.com)",
+      "mcp__notion__notion-search",
+      "mcp__notion__notion-fetch"
+    ]
+  },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "notion"
-  ],
-  "permissions": {
-    "allow": [
-      "WebFetch(domain:mcp.notion.com)"
-    ]
-  }
+  ]
 }
