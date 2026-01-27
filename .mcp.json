@@ -3,6 +3,11 @@
     "notion": {
       "type": "http",
       "url": "https://mcp.notion.com/mcp"
+    },
+    "demo-data": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["mcp_servers/demo-data/server.py"]
     }
   }
 }
