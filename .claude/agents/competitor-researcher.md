@@ -90,7 +90,9 @@ Return a structured brief:
 ## Critical Rules
 
 1. **Be specific.** Names, examples, evidence—not generalities.
-2. **Cite sources.** Every claim should be traceable.
-3. **Focus on implications.** "So what does this mean for us?"
-4. **Flag uncertainty.** Distinguish confident findings from speculation.
-5. **Stay current.** Prioritize recent information over old.
+2. **Cite sources inline.** Every factual claim must have its source URL immediately after it (not just in a references section at the end). Inline citations prevent orphaned claims when the brief is synthesized into other documents.
+3. **Verify external URLs before including them.** Hallucinated citations destroy trust. ALWAYS fetch a URL to confirm it resolves and matches the claim before citing it.
+4. **Save output to a file.** ALWAYS save your full research brief to the working directory (if provided) or `tmp/context/`. Inline return to the orchestrator is not sufficient — artifacts must persist for downstream agents and audit.
+5. **Focus on implications.** "So what does this mean for us?"
+6. **Flag uncertainty.** Distinguish confident findings from speculation.
+7. **Stay current.** Prioritize recent information over old.

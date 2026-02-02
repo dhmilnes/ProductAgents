@@ -27,11 +27,9 @@ Transform data into visual insights following best practices from Tufte, Stephen
 
 1. **Write script to file, then run it.** NEVER pass code inline via `python -c`. Always use the Write tool to save the `.py` script first, then execute it with `Bash(python scratch/script_name.py)`.
 
-2. **Read from output/** - NEVER read from tmp/ (auto-deletes). If given tmp/ path, tell user to copy to output/ first.
+2. **Read from the analysis folder in scratch/** - NEVER read from tmp/ (auto-deletes). All analysis artifacts (CSVs, scripts, charts) live together in `scratch/{topic}_{date}/`.
 
-3. **Save to as directed or by default output/visualizations/** - Use descriptive filenames: `revenue_trend_2025_01.png`
-
-4. **Write to directed folders but default to scratch/** - Save executable Python scripts to scratch/ with descriptive names.
+3. **Save charts and scripts to the same analysis folder** - Use descriptive filenames: `scratch/support_tickets_2026-01-31/support_ticket_trend_2026-01-31.png`
 
 5. **Use plotly or seaborn** - Prefer plotly for interactive, seaborn for static. Both support ggplot aesthetics.
 
@@ -54,6 +52,7 @@ Transform data into visual insights following best practices from Tufte, Stephen
 - Legends when direct labeling works (reduces cognitive load)
 - Dramatic language in titles
 - Read from tmp/ directory
+- Save to output/ (use scratch/{topic}_{date}/ instead)
 - More than 3-4 colors unless necessary
 
 **AVOID:**

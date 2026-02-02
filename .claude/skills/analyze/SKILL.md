@@ -21,7 +21,7 @@ You investigate data questions with rigor. Be autonomous, be skeptical, be trans
 
 6. **State limitations.** What the data can't tell you is as important as what it can.
 
-7. **Check prior work first.** Before starting analysis on a specific entity, check `scratch/` and `output/` for prior related work. Don't reinvent queries that already exist.
+7. **Check prior work first.** Before starting analysis on a specific entity, check `scratch/` for prior related work. Don't reinvent queries that already exist.
 
 ## Method
 
@@ -60,23 +60,24 @@ You investigate data questions with rigor. Be autonomous, be skeptical, be trans
 
 ## Working with Query Results in Python
 
-When analysis requires Python (visualization, ETL, complex transforms):
+Each analysis gets a dedicated folder: `scratch/{topic}_{date}/`. All artifacts live together — CSVs, scripts, visualizations.
 
-1. **Run query** - The query tool auto-saves CSVs and SQL to `tmp/csv/` with timestamped names
-2. **Rename and copy to output/** - Give the file a descriptive name that reflects the content: `cp tmp/csv/query_20260128_213925.csv output/weekly_conversion_rates.csv`
-3. **Use output/ CSV** - Python scripts read from `output/`, not temp locations
+1. **Create analysis folder** - e.g. `scratch/support_tickets_2026-01-31/`
+2. **Run query** - The query tool auto-saves CSVs and SQL to `tmp/csv/` with timestamped names
+3. **Copy to analysis folder** - Give the file a descriptive name: `cp tmp/csv/query_20260128_213925.csv scratch/support_tickets_2026-01-31/support_monthly_trend_2026-01-31.csv`
+4. **All scripts and charts save to the same folder**
 
-**Naming convention for output CSVs:** `{topic}_{date_run}.csv`
+**Naming convention:** `{topic}_{date}.{ext}`
 - `weekly_conversion_rates_2026-01-28.csv`
-- `channel_sessions_yoy_2026-01-28.csv`
-- `funnel_steps_2026-01-28.csv`
+- `support_ticket_trend_2026-01-31.py`
+- `support_ticket_trend_2026-01-31.png`
 
-**Why:** Temp CSVs in `tmp/` auto-delete. Always copy to `output/` with a descriptive name before Python analysis. The auto-generated `query_timestamp` names are for tmp only — never propagate them to output/.
+**Why:** Temp CSVs in `tmp/` auto-delete. Keeping everything in one folder makes analysis reproducible and easy to find later.
 
 **Pattern:**
 ```python
-# In scratch/analysis_script.py
-df = pd.read_csv('output/weekly_conversion_rates.csv')  # NOT tmp/
+# In scratch/support_tickets_2026-01-31/support_ticket_trend_2026-01-31.py
+df = pd.read_csv('scratch/support_tickets_2026-01-31/support_monthly_trend_2026-01-31.csv')
 ```
 
 ## Flexible Data Input

@@ -104,11 +104,15 @@ When a query works well and seems reusable, offer to save it:
 
 **tmp/ has 24-hour TTL.** Use tmp/ for intra-conversation context (e.g., advisors writing files for query agents to read). Files survive overnight for next-morning work, but treat as ephemeral - don't rely on them persisting long-term.
 
-**Copy to output/ before Python analysis.** When a CSV path in `tmp/`, copy it to `output/` immediately if you'll need it for visualization or further analysis. Temp CSVs auto-delete.
+**ALWAYS use `poetry run python` to execute Python.** This repo manages dependencies via Poetry; the system Python lacks required packages. Never use bare `python` or `pip install`.
+
+**Analysis outputs go in a scratch folder.** Each analysis gets a dedicated folder: `scratch/{topic}_{date}/`. All artifacts live together — CSVs, scripts, visualizations. Copy query result CSVs from `tmp/` into this folder before using them in Python.
+
+Example: `scratch/support_tickets_2026-01-31/`
 
 **Check for prior work before starting analysis.** Time-saving pattern for data analysis tasks:
 1. Ask user: "Is there prior work on [topic] I should reference?"
-2. If user indicates yes, check `scratch/`, `output/`, `research_briefs/` for relevant files
+2. If user indicates yes, check `scratch/` for relevant folders
 3. Reuse queries, data, or analysis structure when applicable
 
 **File naming conventions:**
@@ -120,7 +124,7 @@ When a query works well and seems reusable, offer to save it:
 
 | Path | Contents |
 |------|----------|
-| `output/visualizations/` | PNG charts from py-visualization-writer |
+| `scratch/{topic}_{date}/` | All analysis artifacts (CSVs, scripts, charts) |
 | `scratch/uxr-[project]/` | UXR coding aggregation files |
 | `personal/queries/` | Saved reusable SQL queries |
 | `tmp/context/` | Agent research outputs for intra-session use |

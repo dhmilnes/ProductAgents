@@ -15,7 +15,13 @@
       "mcp__demo-data__list_tables",
       "mcp__demo-data__describe_table",
       "mcp__demo-data__query",
-      "mcp__notion__notion-create-pages"
+      "mcp__notion__notion-create-pages",
+      "Bash(poetry run python:*)",
+      "mcp__atlassian__getVisibleJiraProjects",
+      "mcp__atlassian__searchJiraIssuesUsingJql",
+      "mcp__atlassian__createJiraIssue",
+      "mcp__atlassian__getTransitionsForJiraIssue",
+      "mcp__atlassian__transitionJiraIssue"
     ]
   },
   "enableAllProjectMcpServers": true,
